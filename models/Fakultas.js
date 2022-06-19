@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
     });
 
-    Fakultas.associate = function(models) {
+    Fakultas.associate = (models) => {
         Fakultas.hasMany(models.Prodi, {foreignKey: 'fakultas_id'});
     };
 

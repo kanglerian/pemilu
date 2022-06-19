@@ -1,23 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
-    const Staf = sequelize.define('Staf', {
+    const Mahasiswa = sequelize.define('Mahasiswa', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
-        nik: {
+        nim: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
+            unique: true,
+            allowNull: false
         },
         nama_lengkap: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        jabatan: {
-            type: DataTypes.STRING,
-            allowNull: true
+        prodi_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         createdAt: {
             type: DataTypes.DATE,
@@ -30,13 +30,15 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     }, {
-        tableName: 'staf',
+        tableName: 'mahasiswa',
         timestamps: true
     });
 
-    Staf.associate = (models) => {
-        Staf.hasMany(models.Prodi, {foreignKey: 'kaprodi_id'});
+    Mahasiswa.associate = (models) => {
+        Mahasiswa.belongsTo(models.Prodi, {foreignKey: 'prodi_id'});
+        models.Prodi.belongsTo(models.Fakultas, {foreignKey: 'fakultas_id'});
+        models.Prodi.belongsTo(models.Staf, {foreignKey: 'kaprodi_id'});
     };
-    
-    return Staf;
+
+    return Mahasiswa;
 }

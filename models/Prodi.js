@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
     });
 
-    Prodi.associate = function(models) {
+    Prodi.associate = (models) => {
         Prodi.belongsTo(models.Fakultas, {foreignKey: 'fakultas_id'});
         Prodi.belongsTo(models.Staf, {foreignKey: 'kaprodi_id'});
     };
