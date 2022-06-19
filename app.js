@@ -10,6 +10,7 @@ const fakultasRouter = require('./routes/fakultas');
 const stafRouter = require('./routes/staf');
 const prodiRouter = require('./routes/prodi');
 const mahasiswaRouter = require('./routes/mahasiswa');
+const paslonRouter = require('./routes/paslon');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/fakultas', fakultasRouter);
 app.use('/staf', stafRouter);
 app.use('/prodi', prodiRouter);
 app.use('/mahasiswa', mahasiswaRouter);
+app.use('/paslon', paslonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

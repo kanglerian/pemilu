@@ -36,6 +36,8 @@ module.exports = (sequelize, DataTypes) => {
 
     Mahasiswa.associate = (models) => {
         Mahasiswa.belongsTo(models.Prodi, {foreignKey: 'prodi_id'});
+        Mahasiswa.hasMany(models.Paslon, {foreignKey: 'ketua_id'});
+        Mahasiswa.hasMany(models.Paslon, {foreignKey: 'wakil_id'});
         models.Prodi.belongsTo(models.Fakultas, {foreignKey: 'fakultas_id'});
         models.Prodi.belongsTo(models.Staf, {foreignKey: 'kaprodi_id'});
     };
