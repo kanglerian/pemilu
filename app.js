@@ -11,6 +11,7 @@ const stafRouter = require('./routes/staf');
 const prodiRouter = require('./routes/prodi');
 const mahasiswaRouter = require('./routes/mahasiswa');
 const paslonRouter = require('./routes/paslon');
+const pemilihanRouter = require('./routes/pemilihan');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use('/staf', stafRouter);
 app.use('/prodi', prodiRouter);
 app.use('/mahasiswa', mahasiswaRouter);
 app.use('/paslon', paslonRouter);
+app.use('/pemilihan', pemilihanRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
