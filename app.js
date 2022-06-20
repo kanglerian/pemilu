@@ -5,6 +5,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const expressLayouts = require('express-ejs-layouts');
+
 const indexRouter = require('./routes/index');
 const fakultasRouter = require('./routes/fakultas');
 const stafRouter = require('./routes/staf');
@@ -17,6 +19,7 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));

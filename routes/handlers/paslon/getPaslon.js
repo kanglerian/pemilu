@@ -16,8 +16,9 @@ module.exports = async(req, res) => {
         }
     });
 
-    return res.json({
-        status: 'success',
+    return res.render('paslon/index',{
+        title: 'Pasangan Calon BEM',
+        layout: 'layouts/dashboard',
         data: paslon
     });
 }

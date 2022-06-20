@@ -35,8 +35,9 @@ module.exports = async(req, res) => {
             },
         ],
     });
-    return res.json({
-        status: 'success',
+    return res.render('pemilihan/index',{
+        title: 'Data Pemilihan',
+        layout: 'layouts/dashboard',
         data: pemilihan
     });
 }

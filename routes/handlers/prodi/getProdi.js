@@ -8,8 +8,10 @@ module.exports = async(req, res) => {
         ],
     });
 
-    return res.json({
-        status: 'success',
+    return res.render('prodi/index',{
+        title: 'Program Studi',
+        layout: 'layouts/dashboard',
         data: prodi
     });
+
 }

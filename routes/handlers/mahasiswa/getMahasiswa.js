@@ -16,8 +16,14 @@ module.exports = async(req, res) => {
         attributes: ['nim','nama_lengkap'],
     });
 
-    return res.json({
-        status: 'success',
+    // return res.json({
+    //     status: 'success',
+    //     data: mahasiswa
+    // });
+
+    return res.render('mahasiswa/index',{
+        title: 'Data Mahasiswa',
+        layout: 'layouts/dashboard',
         data: mahasiswa
     });
 }
