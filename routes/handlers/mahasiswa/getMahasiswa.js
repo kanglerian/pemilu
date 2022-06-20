@@ -8,8 +8,8 @@ module.exports = async(req, res) => {
                 model: Prodi,
                 attributes: ['nama_prodi'],
                 include: [
-                    { model: Fakultas, attributes: ['id','nama_fakultas'] },
-                    { model: Staf, attributes: ['nama_lengkap','jabatan']}
+                    { model: Fakultas, as: 'Fakultas', attributes: ['id','nama_fakultas'] },
+                    { model: Staf, as: 'Staf', attributes: ['nama_lengkap','jabatan']}
                 ]
             },
         ],

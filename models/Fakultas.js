@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Fakultas.associate = (models) => {
-        Fakultas.hasMany(models.Prodi, {foreignKey: 'fakultas_id'});
+        Fakultas.hasMany(models.Prodi, {as: 'Fakultas', foreignKey: 'fakultas_id'});
     };
 
     return Fakultas;

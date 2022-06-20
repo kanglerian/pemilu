@@ -8,7 +8,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         ketua_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: 'Mahasiswa',
+                key: 'id'
+            }
         },
         wakil_id: {
             type: DataTypes.INTEGER,
@@ -38,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Paslon.associate = (models) => {
-        Paslon.belongsTo(models.Mahasiswa,{foreignKey: 'ketua_id'});
-        Paslon.belongsTo(models.Mahasiswa,{foreignKey: 'wakil_id'});
+        Paslon.belongsTo(models.Mahasiswa, {as: 'Ketua', foreignKey: 'ketua_id'});
+        Paslon.belongsTo(models.Mahasiswa, {as: 'Wakil', foreignKey: 'wakil_id'});
     };
 
     return Paslon;

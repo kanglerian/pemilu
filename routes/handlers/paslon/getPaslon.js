@@ -4,8 +4,16 @@ module.exports = async(req, res) => {
         include: [
             {
                 model: Mahasiswa,
+                as: 'Ketua',
+            },
+            {
+                model: Mahasiswa,
+                as: 'Wakil',
             },
         ],
+        where: {
+            id: 1
+        }
     });
 
     return res.json({
