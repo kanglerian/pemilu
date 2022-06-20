@@ -19,6 +19,7 @@ module.exports = async(req, res) => {
     return res.render('paslon/index',{
         title: 'Pasangan Calon BEM',
         layout: 'layouts/dashboard',
-        data: paslon
+        data: paslon,
+        url: req.url
     });
 }

@@ -6,12 +6,24 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             allowNull: false
         },
+        no_urut: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         ketua_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
         wakil_id: {
             type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        image: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        video: {
+            type: DataTypes.TEXT,
             allowNull: false
         },
         visi: {

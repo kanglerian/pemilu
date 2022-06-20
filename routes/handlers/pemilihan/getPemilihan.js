@@ -5,7 +5,7 @@ module.exports = async(req, res) => {
             {
                 model: Paslon,
                 as: 'Paslon',
-                attributes: ['id','visi','misi'],
+                attributes: ['id','no_urut','visi','misi'],
                 include: [
                     {
                         model: Mahasiswa,
@@ -36,8 +36,12 @@ module.exports = async(req, res) => {
         ],
     });
     return res.render('pemilihan/index',{
-        title: 'Data Pemilihan',
+        title: 'Pemilihan',
         layout: 'layouts/dashboard',
-        data: pemilihan
+        data: pemilihan,
     });
+    // return res.json({
+    //     status: 'success',
+    //     data: pemilihan,
+    // });
 }
